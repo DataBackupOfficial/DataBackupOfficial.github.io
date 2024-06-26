@@ -4,7 +4,7 @@ title: Home
 heroImage: /images/logo.png
 actions:
   - text: Get Started
-    link: /get-started.html
+    link: /en/intro/get-started.html
     type: primary
 
   - text: GitHub

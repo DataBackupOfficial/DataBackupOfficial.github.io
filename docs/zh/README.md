@@ -1,10 +1,10 @@
 ---
 home: true
-title: Home
+title: 主页
 heroImage: /images/logo.png
 actions:
   - text: 开始
-    link: /zh/get-started.html
+    link: /zh/intro/get-started.html
     type: primary
 
   - text: GitHub
