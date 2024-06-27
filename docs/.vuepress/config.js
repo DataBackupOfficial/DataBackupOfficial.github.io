@@ -6,15 +6,14 @@ import { sidebarEn, sidebarZh } from './configs/sidebar/index.ts'
 
 export default defineUserConfig({
   lang: 'en-US',
-
   head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
 
   theme: defaultTheme({
     logo: '/images/logo.png',
-
     navbar: ['/'],
-
     repo: 'XayahSuSuSu/Android-DataBackup',
+    docsRepo: 'DataBackupOfficial/DataBackupOfficial.github.io',
+    docsDir: 'docs',
 
     locales: {
       '/': {
