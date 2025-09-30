@@ -1,5 +1,7 @@
 # Setup
-![setup_01](./../../images/usage/setup_01.jpg)
+<div align="center">
+    <img src="./../../images/usage/setup_01.jpg" alt="setup_01" width="50%">
+</div>
 
 ## Root permission
 You need to grant root first.
@@ -12,4 +14,7 @@ You need to grant root access manually in their manager first, then restart **Da
 
 ### Custom su file
 For some devices, `su` file may not be named `su`, so you can edit it manually. Just remember to restart **DataBackup** to make it work.
-![setup_02](./../../images/usage/setup_02.jpg)
+
+<div align="center">
+    <img src="./../../images/usage/setup_02.jpg" alt="setup_02" width="50%">
+</div>

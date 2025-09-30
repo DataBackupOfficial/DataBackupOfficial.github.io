@@ -1,5 +1,7 @@
 # 引导
-![setup_01](./../../images/usage/setup_01.jpg)
+<div align="center">
+    <img src="./../../images/usage/setup_01.jpg" alt="setup_01" width="50%">
+</div>
 
 ## Root权限
 首先你需要授予Root权限。
@@ -12,4 +14,7 @@
 
 ### 自定义SU文件
 对于某些设备来说，`su`可能并非以`su`命名，所以你可以手动编辑。只需记住编辑完成后需要重启**数据备份**以生效。
-![setup_02](./../../images/usage/setup_02.jpg)
+
+<div align="center">
+    <img src="./../../images/usage/setup_02.jpg" alt="setup_02" width="50%">
+</div>
