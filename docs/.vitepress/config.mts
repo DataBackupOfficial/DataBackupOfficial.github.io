@@ -38,6 +38,30 @@ export default defineConfig({
         ]
       }
     },
+    hr: {
+      label: 'Hrvatski',
+      lang: 'hr',
+      themeConfig: {
+        nav: [
+          { text: 'Početna', link: '/hr/' },
+          { text: 'Vodič', link: '/hr/get-started' }
+        ],
+        sidebar: [
+          {
+            text: 'Vodič',
+            items: [
+              { text: 'Započni', link: '/hr/get-started' },
+            ]
+          },
+          {
+            text: 'Usage',
+            items: [
+              { text: 'Postavljanje', link: '/hr/setup' }
+            ]
+          }
+        ]
+      }
+    },
     zh: {
       label: '简体中文',
       lang: 'zh',
