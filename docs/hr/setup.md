@@ -16,7 +16,7 @@ a zatim ponovo pokrenuti **DataBackup**.
 
 ### Prilagođena „su” datoteka
 Na nekim se uređajima `su` datoteka možda ne zove `su`, pa je možeš ručno
-urediti. Kako bi promjena primijenila moraš ponovo pokrenuti **DataBackup** .
+urediti. Kako bi se promjena primijenila moraš ponovo pokrenuti **DataBackup** .
 
 <div align="center">
     <img src="/images/usage/setup_02.jpg" alt="setup_02" width="50%">
