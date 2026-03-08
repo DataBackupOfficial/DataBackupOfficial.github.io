@@ -17,7 +17,7 @@
   "sidebar": [
     {
       "text": "Vodič",
-      "items": [{ "text": "Početak", "link": "/hr/get-started" }]
+      "items": [{ "text": "Započni", "link": "/hr/get-started" }]
     },
     {
       "text": "Korištenje",
