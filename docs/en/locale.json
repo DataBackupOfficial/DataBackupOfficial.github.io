@@ -1,0 +1,18 @@
+{
+  "label": "English",
+  "lang": "en",
+  "nav": [
+    { "text": "Home", "link": "/en/" },
+    { "text": "Guide", "link": "/en/get-started" }
+  ],
+  "sidebar": [
+    {
+      "text": "Guide",
+      "items": [{ "text": "Get Started", "link": "/en/get-started" }]
+    },
+    {
+      "text": "Usage",
+      "items": [{ "text": "Setup", "link": "/en/setup" }]
+    }
+  ]
+}

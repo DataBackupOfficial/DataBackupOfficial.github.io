@@ -1,0 +1,18 @@
+{
+  "label": "Hrvatski",
+  "lang": "hr",
+  "nav": [
+    { "text": "Početna", "link": "/hr/" },
+    { "text": "Vodič", "link": "/hr/get-started" }
+  ],
+  "sidebar": [
+    {
+      "text": "Vodič",
+      "items": [{ "text": "Početak", "link": "/hr/get-started" }]
+    },
+    {
+      "text": "Korištenje",
+      "items": [{ "text": "Postavljanje", "link": "/hr/setup" }]
+    }
+  ]
+}

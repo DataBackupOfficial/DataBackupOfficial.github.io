@@ -1,15 +1,14 @@
 import DefaultTheme from 'vitepress/theme'
 import { inBrowser } from 'vitepress'
+import { resolveLocalePath } from '../locale-runtime'
 
 function getLocale(): string {
-  const lang = (navigator.language || '').toLowerCase()
-  if (lang.startsWith('zh')) return '/zh/'
-  return '/en/'
+  return resolveLocalePath(navigator.languages.length > 0 ? navigator.languages : [navigator.language || ''])
 }
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({ router }) {
+  enhanceApp() {
     if (inBrowser) {
       const path = window.location.pathname
       if (path === '/' || path === '/index.html') {

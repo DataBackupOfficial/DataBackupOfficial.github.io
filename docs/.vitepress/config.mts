@@ -1,66 +1,28 @@
 import { defineConfig } from 'vitepress'
+import { siteLocales } from './locales'
 
 export default defineConfig({
-  title: "DataBackup",
-  description: "Free and open-source data backup application",
+  title: 'DataBackup',
+  description: 'Free and open-source data backup application',
   base: '/',
-  head: [
-    ['link', { rel: 'icon', href: '/images/logo.png' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
   themeConfig: {
     logo: '/images/logo.png',
     socialLinks: [
       { icon: 'github', link: 'https://github.com/XayahSuSuSu/Android-DataBackup' }
     ]
   },
-  locales: {
-    en: {
-      label: 'English',
-      lang: 'en',
-      themeConfig: {
-        nav: [
-          { text: 'Home', link: '/en/' },
-          { text: 'Guide', link: '/en/get-started' }
-        ],
-        sidebar: [
-          {
-            text: 'Guide',
-            items: [
-              { text: 'Get Started', link: '/en/get-started' },
-            ]
-          },
-          {
-            text: 'Usage',
-            items: [
-              { text: 'Setup', link: '/en/setup' }
-            ]
-          }
-        ]
+  locales: Object.fromEntries(
+    Object.entries(siteLocales).map(([key, locale]) => [
+      key,
+      {
+        label: locale.label,
+        lang: locale.lang,
+        themeConfig: {
+          nav: locale.nav,
+          sidebar: locale.sidebar
+        }
       }
-    },
-    zh: {
-      label: '简体中文',
-      lang: 'zh',
-      themeConfig: {
-        nav: [
-          { text: '主页', link: '/zh/' },
-          { text: '指南', link: '/zh/get-started' }
-        ],
-        sidebar: [
-          {
-            text: '指南',
-            items: [
-              { text: '开始', link: '/zh/get-started' },
-            ]
-          },
-          {
-            text: '使用',
-            items: [
-              { text: '引导', link: '/zh/setup' }
-            ]
-          }
-        ]
-      }
-    }
-  }
+    ])
+  )
 })
