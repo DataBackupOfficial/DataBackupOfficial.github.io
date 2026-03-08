@@ -22,6 +22,7 @@ function readLocaleFile(localePath: string): SiteLocale {
 function loadSiteLocales(): Record<string, SiteLocale> {
   const localeEntries = readdirSync(docsRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory() && !entry.name.startsWith('.'))
+    .sort((left, right) => left.name.localeCompare(right.name))
     .map((entry) => {
       const localeFile = join(docsRoot, entry.name, 'locale.json')
       return existsSync(localeFile)

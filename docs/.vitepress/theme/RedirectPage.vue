@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
-import { getRedirectDelay, resolveRedirectPath, type LocaleRedirect } from '../redirect'
+import {
+  getPreferredLanguages,
+  getRedirectDelay,
+  resolveRedirectPath,
+  type LocaleRedirect
+} from '../redirect'
 
 const { site } = useData()
 
@@ -12,9 +17,7 @@ const preferredLanguages = ref<string[]>([])
 const targetPath = ref('/en/')
 
 onMounted(() => {
-  preferredLanguages.value = navigator.languages.length > 0
-    ? [...navigator.languages]
-    : [navigator.language || 'en']
+  preferredLanguages.value = getPreferredLanguages()
 
   targetPath.value = resolveRedirectPath(redirects.value, preferredLanguages.value)
 
