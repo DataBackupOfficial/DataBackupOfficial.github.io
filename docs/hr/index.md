@@ -4,26 +4,26 @@ layout: home
 
 hero:
   name: DataBackup
-  tagline: Free and open-source data backup application
+  tagline: Besplatna aplikacija otvorenog koda za sigurnosne kopije podataka
   image:
     src: /images/logo.png
     alt: DataBackup
   actions:
     - theme: brand
-      text: Get Started
-      link: /en/get-started
+      text: Započni
+      link: /hr/get-started
     - theme: alt
-      text: View on GitHub
+      text: Pogledaj na GitHub-u
       link: https://github.com/XayahSuSuSu/Android-DataBackup
 
 features:
   - icon: 🍑
-    title: Root
-    details: Support Magisk, KernelSU, APatch.
+    title: Administrator
+    details: Podržava Magisk, KernelSU, APatch.
   - icon: ✨
-    title: Multi-user Support
-    details: You can backup/restore any applactions from/to any users.
+    title: Podrška za više korisnika
+    details: Sigurnosno kopiraj ili obnovi bilo koje aplikacije od ili za bilo kojeg korisnika.
   - icon: ☁️
-    title: Cloud
-    details: Support WebDAV, FTP, SMB.
+    title: Oblak
+    details: Podržava WebDAV, FTP, SMB.
 ---
