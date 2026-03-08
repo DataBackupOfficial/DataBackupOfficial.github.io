@@ -3,6 +3,7 @@ import { inBrowser } from 'vitepress'
 
 function getLocale(): string {
   const lang = (navigator.language || '').toLowerCase()
+  if (lang.startsWith('hr')) return '/hr/'
   if (lang.startsWith('zh')) return '/zh/'
   return '/en/'
 }
