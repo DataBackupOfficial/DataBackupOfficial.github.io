@@ -1,6 +1,11 @@
 import { defineConfig } from 'vitepress'
 import { siteLocales } from './locales'
 
+const localeRedirects = Object.entries(siteLocales).map(([key, locale]) => ({
+  path: `/${key}/`,
+  lang: locale.lang
+}))
+
 export default defineConfig({
   title: 'DataBackup',
   description: 'Free and open-source data backup application',
@@ -8,6 +13,7 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
   themeConfig: {
     logo: '/images/logo.png',
+    localeRedirects,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/XayahSuSuSu/Android-DataBackup' }
     ]
