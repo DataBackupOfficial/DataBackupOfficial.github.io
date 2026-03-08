@@ -3,17 +3,17 @@
 layout: home
 
 hero:
-  name: DataBackup
-  tagline: Free and open-source data backup application
+  name: 数据备份
+  tagline: 免费开源的数据备份应用
   image:
     src: /images/logo.png
     alt: DataBackup
   actions:
     - theme: brand
-      text: Get Started
-      link: /en/get-started
+      text: 开始
+      link: /zh/get-started
     - theme: alt
-      text: View on GitHub
+      text: 在GitHub上查看
       link: https://github.com/XayahSuSuSu/Android-DataBackup
 
 features:
