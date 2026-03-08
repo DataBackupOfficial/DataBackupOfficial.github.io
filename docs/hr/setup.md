@@ -14,7 +14,7 @@ na karticu dozvole.
 Najprije moraš ručno dodijeliti administratorski pristup u njihovom upravljaču,
 a zatim ponovo pokrenuti **DataBackup**.
 
-### Prilagođena su datoteka
+### Prilagođena „su” datoteka
 Na nekim se uređajima `su` datoteka možda ne zove `su`, pa je možeš ručno
 urediti. Kako bi promjena primijenila moraš ponovo pokrenuti **DataBackup** .
 
