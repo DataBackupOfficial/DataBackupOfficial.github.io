@@ -1,47 +1,50 @@
-
-name: Deploy Docs
+name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches:
-      # make sure this is the branch you are using
-      - main
+    branches: [main]
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy-gh-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          # if your docs needs submodules, uncomment the following line
-          # submodules: true
-
-
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
-
-      - name: Install Deps
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
         run: npm ci
-
-      - name: Build Docs
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
-          npm run docs:build
-          > docs/.vuepress/dist/.nojekyll
-
-      - name: Deploy Docs
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Build with VitePress
+        run: npm run docs:build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          # This is the branch where the docs are deployed to
-          branch: gh-pages
-          folder: docs/.vuepress/dist
+          path: docs/.vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
