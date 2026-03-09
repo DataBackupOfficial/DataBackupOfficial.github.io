@@ -23,7 +23,7 @@ features:
   - icon: ✨
     title: Multi-user Support
     details: You can backup/restore any applactions from/to any users.
-  - icon: ☁️
+  - icon: 🔥
     title: Cloud
     details: Support WebDAV, FTP, SMB.
 ---

@@ -23,7 +23,7 @@ features:
   - icon: ✨
     title: Podrška za više korisnika
     details: Sigurnosno kopiraj ili obnovi bilo koje aplikacije od ili za bilo kojeg korisnika.
-  - icon: ☁️
+  - icon: 🔥
     title: Oblak
     details: Podržava WebDAV, FTP, SMB.
 ---

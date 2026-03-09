@@ -3,22 +3,24 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
 
 const { theme } = useData()
-const desktopReady = ref(false)
-const mobileReady = ref(false)
+const desktopMenuReady = ref(false)
+const extraMenuReady = ref(false)
+const mobileMenuReady = ref(false)
 
 let observer: MutationObserver | null = null
 
 function checkTargets() {
-  desktopReady.value = !!document.querySelector('.VPNavBarTranslations .VPMenu')
-  mobileReady.value = !!document.querySelector('.VPNavScreenTranslations .list')
+  desktopMenuReady.value = !!document.querySelector('.VPNavBarTranslations .VPMenu')
+  extraMenuReady.value = !!document.querySelector('.VPNavBarExtra .translations')
+  mobileMenuReady.value = !!document.querySelector('.VPNavScreenTranslations .list')
 }
 
 onMounted(() => {
   checkTargets()
-  if (!mobileReady.value) {
+  if (!desktopMenuReady.value || !extraMenuReady.value || !mobileMenuReady.value) {
     observer = new MutationObserver(() => {
       checkTargets()
-      if (mobileReady.value) {
+      if (desktopMenuReady.value && extraMenuReady.value && mobileMenuReady.value) {
         observer?.disconnect()
         observer = null
       }
@@ -33,8 +35,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <Teleport v-if="desktopReady" to=".VPNavBarTranslations .VPMenu">
-    <div class="vp-translate-desktop">
+  <Teleport v-if="desktopMenuReady" to=".VPNavBarTranslations .VPMenu">
+    <div class="vp-translate-menu-item">
       <a
         href="https://hosted.weblate.org/engage/databackup/"
         target="_blank"
@@ -51,7 +53,25 @@ onUnmounted(() => {
     </div>
   </Teleport>
 
-  <Teleport v-if="mobileReady" to=".VPNavScreenTranslations .list">
+  <Teleport v-if="extraMenuReady" to=".VPNavBarExtra .translations">
+    <div class="vp-translate-menu-item">
+      <a
+        href="https://hosted.weblate.org/engage/databackup/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="vp-translate-link"
+      >
+        {{ theme.translateMenuLabel ?? 'Translate' }}
+        <svg class="vp-translate-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 3h6v6"/>
+          <path d="M10 14 21 3"/>
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        </svg>
+      </a>
+    </div>
+  </Teleport>
+
+  <Teleport v-if="mobileMenuReady" to=".VPNavScreenTranslations .list">
     <li class="item vp-translate-item-mobile">
       <a
         href="https://hosted.weblate.org/engage/databackup/"
@@ -71,7 +91,7 @@ onUnmounted(() => {
 </template>
 
 <style>
-.vp-translate-desktop {
+.vp-translate-menu-item {
   margin: 12px -12px 0;
   border-top: 1px solid var(--vp-c-divider);
   padding: 12px 12px 0;
@@ -80,12 +100,14 @@ onUnmounted(() => {
 .vp-translate-link {
   display: flex;
   align-items: center;
+  width: 100%;
   border-radius: 6px;
   padding: 0 12px;
   line-height: 32px;
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-text-1);
+  text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.25s, color 0.25s;
 }
@@ -104,9 +126,11 @@ onUnmounted(() => {
 .vp-translate-link-mobile {
   display: flex;
   align-items: center;
+  width: 100%;
   line-height: 32px;
   font-size: 13px;
   color: var(--vp-c-text-1);
+  text-decoration: none;
   transition: color 0.25s;
 }
 
