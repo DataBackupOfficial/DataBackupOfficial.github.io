@@ -107,6 +107,7 @@ export default defineConfig({
           darkModeSwitchLabel: locale.darkModeSwitchLabel,
           outlineTitle: locale.outlineTitle,
           returnToTopLabel: locale.returnToTopLabel,
+          translateMenuLabel: locale.translateMenuLabel,
           docFooter: locale.docFooter,
           nav: locale.nav,
           sidebar: locale.sidebar

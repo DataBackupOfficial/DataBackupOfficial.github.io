@@ -9,6 +9,7 @@ export type SiteLocale = {
   darkModeSwitchLabel?: string
   outlineTitle?: string
   returnToTopLabel?: string
+  translateMenuLabel?: string
   docFooter?: {
     prev?: string
     next?: string
