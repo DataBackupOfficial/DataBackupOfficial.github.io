@@ -1,27 +1,43 @@
 {
-  "label": "Hrvatski",
-  "lang": "hr",
-  "sidebarMenuLabel": "Izbornik",
-  "darkModeSwitchLabel": "Izgled",
-  "outlineTitle": "Na ovoj stranici",
-  "returnToTopLabel": "Povratak na vrh",
-  "translateMenuLabel": "Prevedi",
-  "docFooter": {
-    "prev": "Prethodna stranica",
-    "next": "Sljedeća stranica"
-  },
-  "nav": [
-    { "text": "Početna", "link": "/hr/" },
-    { "text": "Vodič", "link": "/hr/get-started" }
-  ],
-  "sidebar": [
-    {
-      "text": "Vodič",
-      "items": [{ "text": "Započni", "link": "/hr/get-started" }]
+    "label": "Hrvatski",
+    "lang": "hr",
+    "sidebarMenuLabel": "Izbornik",
+    "darkModeSwitchLabel": "Izgled",
+    "outlineTitle": "Na ovoj stranici",
+    "returnToTopLabel": "Povratak na vrh",
+    "translateMenuLabel": "Prevedi",
+    "docFooter": {
+        "prev": "Prethodna stranica",
+        "next": "Sljedeća stranica"
     },
-    {
-      "text": "Korištenje",
-      "items": [{ "text": "Postavljanje", "link": "/hr/setup" }]
-    }
-  ]
+    "nav": [
+        {
+            "text": "Početna",
+            "link": "/hr/"
+        },
+        {
+            "text": "Vodič",
+            "link": "/hr/get-started"
+        }
+    ],
+    "sidebar": [
+        {
+            "text": "Vodič",
+            "items": [
+                {
+                    "text": "Započni",
+                    "link": "/hr/get-started"
+                }
+            ]
+        },
+        {
+            "text": "Korištenje",
+            "items": [
+                {
+                    "text": "Postavljanje",
+                    "link": "/hr/setup"
+                }
+            ]
+        }
+    ]
 }
