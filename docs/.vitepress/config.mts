@@ -103,6 +103,11 @@ export default defineConfig({
         label: locale.label,
         lang: locale.lang,
         themeConfig: {
+          sidebarMenuLabel: locale.sidebarMenuLabel,
+          darkModeSwitchLabel: locale.darkModeSwitchLabel,
+          outlineTitle: locale.outlineTitle,
+          returnToTopLabel: locale.returnToTopLabel,
+          docFooter: locale.docFooter,
           nav: locale.nav,
           sidebar: locale.sidebar
         }

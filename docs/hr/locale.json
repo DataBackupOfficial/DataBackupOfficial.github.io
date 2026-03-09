@@ -1,6 +1,14 @@
 {
   "label": "Hrvatski",
   "lang": "hr",
+  "sidebarMenuLabel": "Izbornik",
+  "darkModeSwitchLabel": "Izgled",
+  "outlineTitle": "Na ovoj stranici",
+  "returnToTopLabel": "Povratak na vrh",
+  "docFooter": {
+    "prev": "Prethodna stranica",
+    "next": "Sljedeća stranica"
+  },
   "nav": [
     { "text": "Početna", "link": "/hr/" },
     { "text": "Vodič", "link": "/hr/get-started" }

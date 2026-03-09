@@ -5,6 +5,14 @@ import { fileURLToPath } from 'node:url'
 export type SiteLocale = {
   label: string
   lang: string
+  sidebarMenuLabel?: string
+  darkModeSwitchLabel?: string
+  outlineTitle?: string
+  returnToTopLabel?: string
+  docFooter?: {
+    prev?: string
+    next?: string
+  }
   nav: Array<{ text: string; link: string }>
   sidebar: Array<{
     text: string

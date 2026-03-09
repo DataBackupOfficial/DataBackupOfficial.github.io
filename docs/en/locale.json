@@ -1,6 +1,14 @@
 {
   "label": "English",
   "lang": "en",
+  "sidebarMenuLabel": "Menu",
+  "darkModeSwitchLabel": "Appearance",
+  "outlineTitle": "On this page",
+  "returnToTopLabel": "Return to top",
+  "docFooter": {
+    "prev": "Previous page",
+    "next": "Next page"
+  },
   "nav": [
     { "text": "Home", "link": "/en/" },
     { "text": "Guide", "link": "/en/get-started" }
