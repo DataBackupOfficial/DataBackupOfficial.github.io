@@ -16,7 +16,7 @@ hero:
       text: Pogledaj na GitHub-u
       link: https://github.com/XayahSuSuSu/Android-DataBackup
 
-features:
+funkcije:
   - icon: 🍑
     title: Administrator
     details: Podržava Magisk, KernelSU, APatch.
