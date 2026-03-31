@@ -4,26 +4,26 @@ layout: home
 
 hero:
   name: DataBackup
-  tagline: Free and open-source data backup application
+  tagline: Bezmaksas un atvērtā pirmkoda datu dublēšanas lietotne
   image:
     src: /images/logo.png
     alt: DataBackup
   actions:
     - theme: brand
-      text: Get Started
-      link: /en/get-started
+      text: Sākt
+      link: /lv/get-started
     - theme: alt
-      text: View on GitHub
+      text: Skatīt GitHub
       link: https://github.com/XayahSuSuSu/Android-DataBackup
 
 features:
   - icon: 🍑
-    title: Root
-    details: Support Magisk, KernelSU, APatch.
+    title: Root piekļuve
+    details: Atbalsta Magisk, KernelSU, APatch.
   - icon: ✨
-    title: Multi-user Support
-    details: You can backup/restore any applactions from/to any users.
+    title: Vairāku lietotāju kontu atbalsts
+    details: Variet dublēt/atjaunot jebkuru lietotni no/uz jebkura lietotāja konta.
   - icon: 🔥
-    title: Cloud
-    details: Support WebDAV, FTP, SMB.
+    title: Mākoņkrātuve
+    details: Atbalsta WebDAV, FTP, SMB.
 ---
