@@ -1,19 +1,23 @@
-# Setup
+# Iestatīšana
 <div align="center">
     <img src="/images/usage/setup_01.jpg" alt="setup_01" width="50%">
 </div>
 
-## Root permission
-You need to grant root first.
+## Root piekļuves tiesības
+Vispirms jums ir jāpiešķir root piekļuves tiesības.
 
 ### * Magisk
-You can grant root access directly in the popup window when clicking the permission card.
+Variet piešķirt root piekļuvi tieši uznirstošajā logā, noklikšķinot uz atļaujas
+kartītes.
 
 ### * KernelSU/APatch
-You need to grant root access manually in their manager first, then restart **DataBackup**.
+Vispirms jums manuāli jāpiešķir root piekļuve to pārvaldniekā un pēc tam
+jāpalaiž pa jaunu **DataBackup**.
 
-### Custom su file
-For some devices, `su` file may not be named `su`, so you can edit it manually. Just remember to restart **DataBackup** to make it work.
+### Pielāgota su datne
+Dažās ierīcēs `su` datnes nosaukums var nebūt `su`, tāpēc variet to rediģēt
+manuāli. Tikai neaizmirstiet palaist pa jaunu **DataBackup**, lai izmaiņas
+stātos spēkā.
 
 <div align="center">
     <img src="/images/usage/setup_02.jpg" alt="setup_02" width="50%">
