@@ -1,1 +1,43 @@
-{}
+{
+    "label": "Latviešu",
+    "lang": "lv",
+    "sidebarMenuLabel": "Izvēlne",
+    "darkModeSwitchLabel": "Izskats",
+    "outlineTitle": "Šajā lapā",
+    "returnToTopLabel": "Atpakaļ uz augšgalu",
+    "translateMenuLabel": "Tulkot",
+    "docFooter": {
+        "prev": "Iepriekšējā lapa",
+        "next": "Nākošā lapa"
+    },
+    "nav": [
+        {
+            "text": "Sākums",
+            "link": "/lv/"
+        },
+        {
+            "text": "Rokasgrāmata",
+            "link": "/lv/get-started"
+        }
+    ],
+    "sidebar": [
+        {
+            "text": "Rokasgrāmata",
+            "items": [
+                {
+                    "text": "Sākt",
+                    "link": "/lv/get-started"
+                }
+            ]
+        },
+        {
+            "text": "Lietojums",
+            "items": [
+                {
+                    "text": "Iestatīšana",
+                    "link": "/lv/setup"
+                }
+            ]
+        }
+    ]
+}
