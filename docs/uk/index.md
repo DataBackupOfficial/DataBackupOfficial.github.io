@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /en/get-started
+      link: /uk/get-started
     - theme: alt
       text: View on GitHub
       link: https://github.com/XayahSuSuSu/Android-DataBackup
@@ -19,11 +19,11 @@ hero:
 features:
   - icon: 🍑
     title: Root
-    details: Support Magisk, KernelSU, APatch.
+    details: Підтримує Magisk, KernelSU, APatch.
   - icon: ✨
-    title: Multi-user Support
-    details: You can backup/restore any applactions from/to any users.
+    title: Багато-користувацька Підтримка
+    details: Ви можете зробити резервну копію/відновлення будь-якого додатку від/до будь-якого користувача.
   - icon: 🔥
     title: Cloud
-    details: Support WebDAV, FTP, SMB.
+    details: Підтримує WebDAV, FTP, SMB.
 ---
