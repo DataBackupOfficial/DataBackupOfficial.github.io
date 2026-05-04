@@ -1,1 +1,43 @@
-{}
+{
+    "label": "Українська",
+    "lang": "uk",
+    "sidebarMenuLabel": "Меню",
+    "darkModeSwitchLabel": "Зовнішній вигляд",
+    "outlineTitle": "На цій сторінці",
+    "returnToTopLabel": "Повернутись на верх",
+    "translateMenuLabel": "Перекласти",
+    "docFooter": {
+        "prev": "Попередня сторінка",
+        "next": "Наступна сторінка"
+    },
+    "nav": [
+        {
+            "text": "Домашня",
+            "link": "/uk/"
+        },
+        {
+            "text": "Гід",
+            "link": "/uk/get-started"
+        }
+    ],
+    "sidebar": [
+        {
+            "text": "Гід",
+            "items": [
+                {
+                    "text": "Розпочнемо",
+                    "link": "/uk/get-started"
+                }
+            ]
+        },
+        {
+            "text": "Використання",
+            "items": [
+                {
+                    "text": "Встановлення",
+                    "link": "/uk/setup"
+                }
+            ]
+        }
+    ]
+}
