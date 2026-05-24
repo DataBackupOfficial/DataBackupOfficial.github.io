@@ -1,1 +1,43 @@
-{}
+{
+    "label": "Anglais",
+    "lang": "an",
+    "sidebarMenuLabel": "Menu",
+    "darkModeSwitchLabel": "Apparence",
+    "outlineTitle": "Sur cette page",
+    "returnToTopLabel": "Retourner en haut",
+    "translateMenuLabel": "Traduire",
+    "docFooter": {
+        "prev": "Page précédente",
+        "next": "Page suivante"
+    },
+    "nav": [
+        {
+            "text": "Accueil",
+            "link": "/en/"
+        },
+        {
+            "text": "Guide",
+            "link": "/en/get-started"
+        }
+    ],
+    "sidebar": [
+        {
+            "text": "Guide",
+            "items": [
+                {
+                    "text": "Démarrer",
+                    "link": "/en/get-started"
+                }
+            ]
+        },
+        {
+            "text": "Utilisation",
+            "items": [
+                {
+                    "text": "Configuration",
+                    "link": "/en/setup"
+                }
+            ]
+        }
+    ]
+}
