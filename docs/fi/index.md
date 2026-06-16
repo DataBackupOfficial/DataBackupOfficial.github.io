@@ -1,6 +1,6 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
-layout: home
+asettelu: koti
 
 hero:
   name: DataBackup
@@ -16,13 +16,13 @@ hero:
       text: View on GitHub
       link: https://github.com/XayahSuSuSu/Android-DataBackup
 
-features:
+ominaisuudet:
   - icon: 🍑
     title: Root
     details: Support Magisk, KernelSU, APatch.
   - icon: ✨
     title: Multi-user Support
-    details: You can backup/restore any applactions from/to any users.
+    details: Voit varmuuskopioida/palauttaa minkä tahansa käyttäjän sovelluksia.
   - icon: 🔥
     title: Cloud
     details: Support WebDAV, FTP, SMB.
