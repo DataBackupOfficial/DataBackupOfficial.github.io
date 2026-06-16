@@ -1,1 +1,27 @@
-{}
+{
+    "label": "Englanti",
+    "darkModeSwitchLabel": "Ulkoasu",
+    "outlineTitle": "Tällä sivulla",
+    "returnToTopLabel": "Palaa yläosaan",
+    "translateMenuLabel": "Käännä",
+    "docFooter": {
+        "prev": "Edellinen sivu",
+        "next": "Seuraava sivu"
+    },
+    "nav": [
+        {
+            "text": "Koti"
+        }
+    ],
+    "sidebarMenuLabel": "Valikko",
+    "sidebar": [
+        {
+            "text": "Opas",
+            "items": [
+                {
+                    "text": "Aloita"
+                }
+            ]
+        }
+    ]
+}
