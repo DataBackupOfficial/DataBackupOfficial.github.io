@@ -1,21 +1,21 @@
 export type LocaleRedirect = {
   path: string
-  lang: string
+  lang?: string
 }
 
-function normalizeLanguage(language: string): string {
+function normalizeLanguage(language: unknown): string {
+  if (typeof language !== 'string') {
+    return ''
+  }
+
   return language.trim().toLowerCase().replace(/_/g, '-')
 }
 
 function pushLanguage(
   target: string[],
   seen: Set<string>,
-  language: string | undefined
+  language: unknown
 ) {
-  if (!language) {
-    return
-  }
-
   const normalized = normalizeLanguage(language)
 
   if (!normalized || seen.has(normalized)) {
@@ -61,26 +61,36 @@ export function getPreferredLanguages(
 }
 
 export function resolveRedirectPath(
-  redirects: LocaleRedirect[],
+  redirects: readonly LocaleRedirect[],
   preferredLanguages: readonly string[]
 ): string {
+  const safeRedirects = redirects
+    .map((redirect) => {
+      const lang = normalizeLanguage(redirect.lang)
+
+      return typeof redirect.path === 'string' && redirect.path && lang
+        ? { path: redirect.path, lang }
+        : null
+    })
+    .filter((redirect): redirect is { path: string; lang: string } => redirect !== null)
+
   const normalized = preferredLanguages
     .map((language) => normalizeLanguage(language))
+    .filter(Boolean)
     .flatMap((language) => [language, language.split('-')[0]])
 
   for (const preferred of normalized) {
-    const matched = redirects.find(({ lang }) => {
-      const normalizedLang = lang.toLowerCase()
-      return preferred === normalizedLang || preferred === normalizedLang.split('-')[0]
-    })
+    const matched = safeRedirects.find(({ lang }) =>
+      preferred === lang || preferred === lang.split('-')[0]
+    )
 
     if (matched) {
       return matched.path
     }
   }
 
-  return redirects.find(({ lang }) => lang.toLowerCase().startsWith('en'))?.path
-    ?? redirects[0]?.path
+  return safeRedirects.find(({ lang }) => lang.startsWith('en'))?.path
+    ?? safeRedirects[0]?.path
     ?? '/en/'
 }
 

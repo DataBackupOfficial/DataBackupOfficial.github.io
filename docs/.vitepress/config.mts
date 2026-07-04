@@ -57,8 +57,14 @@ function createLocaleRedirectScript() {
 
       for (const candidate of normalized) {
         const matched = redirects.find(({ lang }) => {
-          const normalizedLang = lang.toLowerCase();
-          return candidate === normalizedLang || candidate === normalizedLang.split('-')[0];
+          if (typeof lang !== 'string') {
+            return false;
+          }
+
+          const normalizedLang = lang.trim().toLowerCase().replace(/_/g, '-');
+          return normalizedLang && (
+            candidate === normalizedLang || candidate === normalizedLang.split('-')[0]
+          );
         });
 
         if (matched) {
@@ -66,8 +72,10 @@ function createLocaleRedirectScript() {
         }
       }
 
-      return redirects.find(({ lang }) => lang.toLowerCase().startsWith('en'))?.path
-        ?? redirects[0]?.path
+      return redirects.find(({ lang }) =>
+        typeof lang === 'string' && lang.trim().toLowerCase().startsWith('en')
+      )?.path
+        ?? redirects.find(({ path, lang }) => path && typeof lang === 'string')?.path
         ?? '/en/';
     };
 
