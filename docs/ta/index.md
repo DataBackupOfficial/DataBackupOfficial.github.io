@@ -1,29 +1,29 @@
----
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
+--- 
+# https://vitepress.dev/reference/default-theme-home-page 
+தளவமைப்பு: வீடு
 
-hero:
-  name: DataBackup
-  tagline: Free and open-source data backup application
-  image:
-    src: /images/logo.png
-    alt: DataBackup
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /en/get-started
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/XayahSuSuSu/Android-DataBackup
+ஈரோ: 
+பெயர்: டேட்டா பேக்கப் 
+கோசம்: இலவச மற்றும் திறந்த மூல தரவு காப்பு பயன்பாடு 
+படம்: 
+src: /images/logo.png 
+மாற்று: தரவு காப்புப்பிரதி 
+செயல்கள்: 
+- தீம்: சூட்டுக்குறி 
+உரை: தொடங்கு 
+இணைப்பு: /en/get-start 
+- தீம்: மாற்று 
+உரை: GitHub இல் காண்க 
+இணைப்பு: https://github.com/XayahSuSuSu/Android-DataBackup
 
-features:
-  - icon: 🍑
-    title: Root
-    details: Support Magisk, KernelSU, APatch.
-  - icon: ✨
-    title: Multi-user Support
-    details: You can backup/restore any applactions from/to any users.
-  - icon: 🔥
-    title: Cloud
-    details: Support WebDAV, FTP, SMB.
+அம்சங்கள்: 
+- சின்னம்: 🍑 
+தலைப்பு: வேர் 
+விவரங்கள்: உதவி Magisk, KernelSU, APatch. 
+- சின்னம்: ✨ 
+தலைப்பு: பல பயனர் உதவி 
+விவரங்கள்: எந்தப் பயனரிடமிருந்தும்/எந்தவொரு அப்ளிகேசன்களையும் நீங்கள் காப்புப் பிரதி எடுக்கலாம்/மீட்டெடுக்கலாம். 
+- சின்னம்: 🔥 
+தலைப்பு: முகில் 
+விவரங்கள்: உதவி WebDAV, FTP, SMB. 
 ---
