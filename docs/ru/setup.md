@@ -1,19 +1,23 @@
-# Setup
+# Настройка
 <div align="center">
     <img src="/images/usage/setup_01.jpg" alt="setup_01" width="50%">
 </div>
 
-## Root permission
-You need to grant root first.
+## Права суперпользователя
+Сначала необходимо предоставить права root.
 
 ### * Magisk
-You can grant root access directly in the popup window when clicking the permission card.
+Вы можете предоставить права root прямо во всплывающем окне при нажатии на
+карточку с разрешением.
 
 ### * KernelSU/APatch
-You need to grant root access manually in their manager first, then restart **DataBackup**.
+Сначала необходимо вручную предоставить права root в их диспетчере, а затем
+перезапустить **DataBackup**.
 
-### Custom su file
-For some devices, `su` file may not be named `su`, so you can edit it manually. Just remember to restart **DataBackup** to make it work.
+### Пользовательский файл su
+На некоторых устройствах файл `su` может называться не `su`, поэтому его можно
+отредактировать вручную. Не забудьте перезапустить **DataBackup**, чтобы
+изменения вступили в силу.
 
 <div align="center">
     <img src="/images/usage/setup_02.jpg" alt="setup_02" width="50%">
