@@ -2,17 +2,39 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+type LocaleStrings = {
+  sidebarMenuLabel: string
+  darkModeSwitchLabel: string
+  outlineTitle: string
+  returnToTopLabel: string
+  translateMenuLabel: string
+  docFooter: {
+    prev: string
+    next: string
+  }
+  nav: {
+    home: string
+    guide: string
+  }
+  sidebar: {
+    guide: string
+    getStarted: string
+    usage: string
+    setup: string
+  }
+}
+
 export type SiteLocale = {
   label: string
   lang: string
-  sidebarMenuLabel?: string
-  darkModeSwitchLabel?: string
-  outlineTitle?: string
-  returnToTopLabel?: string
-  translateMenuLabel?: string
-  docFooter?: {
-    prev?: string
-    next?: string
+  sidebarMenuLabel: string
+  darkModeSwitchLabel: string
+  outlineTitle: string
+  returnToTopLabel: string
+  translateMenuLabel: string
+  docFooter: {
+    prev: string
+    next: string
   }
   nav: Array<{ text: string; link: string }>
   sidebar: Array<{
@@ -23,108 +45,131 @@ export type SiteLocale = {
 
 const vitepressRoot = dirname(fileURLToPath(import.meta.url))
 const docsRoot = dirname(vitepressRoot)
-
-function readLocaleFile(localePath: string): SiteLocale {
-  return JSON.parse(readFileSync(localePath, 'utf8')) as SiteLocale
+function capitalizeLanguageName(value: string, locale: string): string {
+  const [first = '', ...rest] = Array.from(value)
+  return first.toLocaleUpperCase(locale) + rest.join('')
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
-}
+function createLocaleMetadata(localeKey: string): { label: string; lang: string } {
+  const candidate = localeKey.replaceAll('_', '-')
+  let lang: string
 
-function readString(value: unknown): string | undefined {
-  return typeof value === 'string' && value.trim() ? value : undefined
-}
-
-function readNav(value: unknown): SiteLocale['nav'] | undefined {
-  if (Array.isArray(value)) {
-    const nav = value
-      .filter(isRecord)
-      .map((item) => ({
-        text: readString(item.text),
-        link: readString(item.link)
-      }))
-      .filter((item): item is { text: string; link: string } => !!item.text && !!item.link)
-
-    if (nav.length > 0) {
-      return nav
-    }
+  try {
+    lang = Intl.getCanonicalLocales(candidate)[0]
+  } catch {
+    throw new TypeError(`Invalid locale directory name: ${localeKey}`)
   }
 
-  return undefined
-}
+  const generatedLabel = new Intl.DisplayNames([lang], { type: 'language' }).of(lang)
+  const label = generatedLabel
 
-function readSidebar(value: unknown): SiteLocale['sidebar'] | undefined {
-  if (Array.isArray(value)) {
-    const sidebar = value
-      .filter(isRecord)
-      .map((section) => ({
-        text: readString(section.text),
-        items: Array.isArray(section.items)
-          ? section.items
-            .filter(isRecord)
-            .map((item) => ({
-              text: readString(item.text),
-              link: readString(item.link)
-            }))
-            .filter((item): item is { text: string; link: string } => !!item.text && !!item.link)
-          : []
-      }))
-      .filter((section): section is SiteLocale['sidebar'][number] =>
-        !!section.text && section.items.length > 0
-      )
-
-    if (sidebar.length > 0) {
-      return sidebar
-    }
-  }
-
-  return undefined
-}
-
-function readDocFooter(value: unknown): SiteLocale['docFooter'] | undefined {
-  if (!isRecord(value)) {
-    return undefined
-  }
-
-  const prev = readString(value.prev)
-  const next = readString(value.next)
-
-  return prev || next ? { prev, next } : undefined
-}
-
-function langMatchesLocaleKey(localeKey: string, lang: string): boolean {
-  const normalizedKey = localeKey.trim().toLowerCase()
-  const normalizedLang = lang.trim().toLowerCase().replace(/_/g, '-')
-
-  return normalizedLang === normalizedKey || normalizedLang.startsWith(`${normalizedKey}-`)
-}
-
-function validateLocale(localeKey: string, locale: unknown): SiteLocale | null {
-  if (!isRecord(locale)) {
-    return null
-  }
-
-  const label = readString(locale.label)
-  const lang = readString(locale.lang)
-  const nav = readNav(locale.nav)
-  const sidebar = readSidebar(locale.sidebar)
-
-  if (!label || !lang || !langMatchesLocaleKey(localeKey, lang) || !nav || !sidebar) {
-    return null
+  if (!label) {
+    throw new TypeError(`Could not generate a language label for ${localeKey}`)
   }
 
   return {
-    label,
-    lang,
-    sidebarMenuLabel: readString(locale.sidebarMenuLabel),
-    darkModeSwitchLabel: readString(locale.darkModeSwitchLabel),
-    outlineTitle: readString(locale.outlineTitle),
-    returnToTopLabel: readString(locale.returnToTopLabel),
-    translateMenuLabel: readString(locale.translateMenuLabel),
-    docFooter: readDocFooter(locale.docFooter),
-    nav,
-    sidebar
+    label: capitalizeLanguageName(label, lang),
+    lang
+  }
+}
+
+function requireRecord(value: unknown, location: string): Record<string, unknown> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    throw new TypeError(`${location} must be an object`)
+  }
+
+  return value as Record<string, unknown>
+}
+
+function requireKeys(value: Record<string, unknown>, expected: string[], location: string) {
+  const actual = Object.keys(value).sort()
+  const wanted = [...expected].sort()
+
+  if (actual.length !== wanted.length || actual.some((key, index) => key !== wanted[index])) {
+    throw new TypeError(`${location} must contain exactly: ${wanted.join(', ')}`)
+  }
+}
+
+function requireString(value: unknown, location: string): string {
+  if (typeof value !== 'string' || !value.trim()) {
+    throw new TypeError(`${location} must be a non-empty string`)
+  }
+
+  return value
+}
+
+function readLocaleStrings(localePath: string): LocaleStrings {
+  const root = requireRecord(JSON.parse(readFileSync(localePath, 'utf8')), localePath)
+  requireKeys(root, [
+    'darkModeSwitchLabel',
+    'docFooter',
+    'nav',
+    'outlineTitle',
+    'returnToTopLabel',
+    'sidebar',
+    'sidebarMenuLabel',
+    'translateMenuLabel'
+  ], localePath)
+
+  const docFooter = requireRecord(root.docFooter, `${localePath}.docFooter`)
+  requireKeys(docFooter, ['next', 'prev'], `${localePath}.docFooter`)
+
+  const nav = requireRecord(root.nav, `${localePath}.nav`)
+  requireKeys(nav, ['guide', 'home'], `${localePath}.nav`)
+
+  const sidebar = requireRecord(root.sidebar, `${localePath}.sidebar`)
+  requireKeys(sidebar, ['getStarted', 'guide', 'setup', 'usage'], `${localePath}.sidebar`)
+
+  return {
+    sidebarMenuLabel: requireString(root.sidebarMenuLabel, `${localePath}.sidebarMenuLabel`),
+    darkModeSwitchLabel: requireString(root.darkModeSwitchLabel, `${localePath}.darkModeSwitchLabel`),
+    outlineTitle: requireString(root.outlineTitle, `${localePath}.outlineTitle`),
+    returnToTopLabel: requireString(root.returnToTopLabel, `${localePath}.returnToTopLabel`),
+    translateMenuLabel: requireString(root.translateMenuLabel, `${localePath}.translateMenuLabel`),
+    docFooter: {
+      prev: requireString(docFooter.prev, `${localePath}.docFooter.prev`),
+      next: requireString(docFooter.next, `${localePath}.docFooter.next`)
+    },
+    nav: {
+      home: requireString(nav.home, `${localePath}.nav.home`),
+      guide: requireString(nav.guide, `${localePath}.nav.guide`)
+    },
+    sidebar: {
+      guide: requireString(sidebar.guide, `${localePath}.sidebar.guide`),
+      getStarted: requireString(sidebar.getStarted, `${localePath}.sidebar.getStarted`),
+      usage: requireString(sidebar.usage, `${localePath}.sidebar.usage`),
+      setup: requireString(sidebar.setup, `${localePath}.sidebar.setup`)
+    }
+  }
+}
+
+function createSiteLocale(localeKey: string, strings: LocaleStrings): SiteLocale {
+  const metadata = createLocaleMetadata(localeKey)
+  const localeRoot = `/${localeKey}`
+
+  return {
+    label: metadata.label,
+    lang: metadata.lang,
+    sidebarMenuLabel: strings.sidebarMenuLabel,
+    darkModeSwitchLabel: strings.darkModeSwitchLabel,
+    outlineTitle: strings.outlineTitle,
+    returnToTopLabel: strings.returnToTopLabel,
+    translateMenuLabel: strings.translateMenuLabel,
+    docFooter: strings.docFooter,
+    nav: [
+      { text: strings.nav.home, link: `${localeRoot}/` },
+      { text: strings.nav.guide, link: `${localeRoot}/get-started` }
+    ],
+    sidebar: [
+      {
+        text: strings.sidebar.guide,
+        items: [{ text: strings.sidebar.getStarted, link: `${localeRoot}/get-started` }]
+      },
+      {
+        text: strings.sidebar.usage,
+        items: [{ text: strings.sidebar.setup, link: `${localeRoot}/setup` }]
+      }
+    ]
   }
 }
 
@@ -133,14 +178,13 @@ function loadSiteLocales(): Record<string, SiteLocale> {
     .filter((entry) => entry.isDirectory() && !entry.name.startsWith('.'))
     .sort((left, right) => left.name.localeCompare(right.name))
     .map((entry) => {
-      const localeFile = join(docsRoot, entry.name, 'locale.json')
-      if (!existsSync(localeFile)) {
+      const localePath = join(docsRoot, entry.name, 'locale.json')
+
+      if (!existsSync(localePath)) {
         return null
       }
 
-      const locale = validateLocale(entry.name, readLocaleFile(localeFile))
-
-      return locale ? [entry.name, locale] as const : null
+      return [entry.name, createSiteLocale(entry.name, readLocaleStrings(localePath))] as const
     })
     .filter((entry): entry is readonly [string, SiteLocale] => entry !== null)
 

@@ -1,1 +1,21 @@
-{}
+{
+  "sidebarMenuLabel": "Menu",
+  "darkModeSwitchLabel": "Appearance",
+  "outlineTitle": "On this page",
+  "returnToTopLabel": "Return to top",
+  "translateMenuLabel": "Translate",
+  "docFooter": {
+    "prev": "Previous page",
+    "next": "Next page"
+  },
+  "nav": {
+    "home": "Home",
+    "guide": "Guide"
+  },
+  "sidebar": {
+    "guide": "Guide",
+    "getStarted": "Get Started",
+    "usage": "Usage",
+    "setup": "Setup"
+  }
+}
