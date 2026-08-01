@@ -3,6 +3,9 @@ name: Deploy VitePress site to Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -19,8 +22,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+      - name: Setup Python
+        if: github.event_name != 'push'
+        uses: actions/setup-python@v6
         with:
-          fetch-depth: 0
+          python-version: "3.x"
+      - name: Download Weblate credits
+        if: github.event_name != 'push'
+        env:
+          WEBLATE_TOKEN: ${{ secrets.WEBLATE_TOKEN }}
+        run: |
+          python3 -m pip install requests
+          python3 .github/scripts/update_translators.py \
+            --revisions .github/scripts/translators_revision.json \
+            --output docs/public/api/translators.json
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
