@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "name": "DataBackup",
+    "tagline": "Besplatna aplikacija otvorenog koda za sigurnosne kopije podataka",
+    "imageAlt": "DataBackup",
+    "getStarted": "Započni",
+    "viewOnGitHub": "Pogledaj na GitHub-u"
+  },
+  "features": {
+    "root": {
+      "title": "Administrator",
+      "details": "Podržava Magisk, KernelSU, APatch."
+    },
+    "multiUser": {
+      "title": "Podrška za više korisnika",
+      "details": "Sigurnosno kopiraj ili obnovi bilo koje aplikacije od ili za bilo kojeg korisnika."
+    },
+    "cloud": {
+      "title": "Oblak",
+      "details": "Podržava WebDAV, FTP, SMB."
+    }
+  }
+}

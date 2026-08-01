@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "name": "DataBackup",
+    "tagline": "Bezmaksas un atvērtā pirmkoda datu dublēšanas lietotne",
+    "imageAlt": "DataBackup",
+    "getStarted": "Sākt",
+    "viewOnGitHub": "Skatīt GitHub"
+  },
+  "features": {
+    "root": {
+      "title": "Root piekļuve",
+      "details": "Atbalsta Magisk, KernelSU, APatch."
+    },
+    "multiUser": {
+      "title": "Vairāku lietotāju kontu atbalsts",
+      "details": "Variet dublēt/atjaunot jebkuru lietotni no/uz jebkura lietotāja konta."
+    },
+    "cloud": {
+      "title": "Mākoņkrātuve",
+      "details": "Atbalsta WebDAV, FTP, SMB."
+    }
+  }
+}

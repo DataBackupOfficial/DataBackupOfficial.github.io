@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import '../../scripts/generate-homepages.mjs'
 import { siteLocales } from './locales'
 
 const localeRedirects = Object.entries(siteLocales).map(([key, locale]) => ({
