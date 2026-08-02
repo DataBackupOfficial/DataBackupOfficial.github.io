@@ -1,1 +1,21 @@
-{}
+{
+    "sidebarMenuLabel": "பட்டியல்",
+    "darkModeSwitchLabel": "தோற்றம்",
+    "outlineTitle": "இந்தப் பக்கத்தில்",
+    "returnToTopLabel": "மேலே திரும்பவும்",
+    "translateMenuLabel": "மொழிபெயர்த்திடு",
+    "docFooter": {
+        "prev": "முந்தைய பக்கம்",
+        "next": "அடுத்த பக்கம்"
+    },
+    "nav": {
+        "home": "வீடு",
+        "guide": "வழிகாட்டி"
+    },
+    "sidebar": {
+        "guide": "வழிகாட்டி",
+        "getStarted": "தொடங்குங்கள்",
+        "usage": "பயன்பாடு",
+        "setup": "அமைவு"
+    }
+}
