@@ -1,22 +1,31 @@
-# Get Started
+# தொடங்குங்கள்
 
-[DataBackup](https://github.com/XayahSuSuSu/Android-DataBackup) is a free and open-source data backup application on Android 8+.
+[DataBackup](https://github.com/XayahSuSuSu/Android-DataBackup) என்பது
+ஆண்ட்ராய்டு 8+ இல் ஒரு இலவச மற்றும் திறந்த மூல தரவு காப்புப் பிரதி பயன்பாடாகும்.
 
-## Root
+## மூலம்
 
-This application needs root, support [Magisk](https://github.com/topjohnwu/Magisk), [KernelSU](https://github.com/tiann/KernelSU), [APatch](https://github.com/bmax121/APatch).
+இந்த பயன்பாட்டிற்கு ரூட், உதவி [Magisk](https://github.com/topjohnwu/Magisk),
+[KernelSU](https://github.com/tiann/KernelSU),
+[APatch](https://github.com/bmax121/APatch) தேவை.
 
-## Install
+## நிறுவவும்
 
-You can get the **APK** from:
-* **[Releases](https://github.com/XayahSuSuSu/Android-DataBackup/releases)**
-* **[F-Droid](https://f-droid.org/zh_Hans/packages/com.xayah.databackup.foss/)**
-* **[IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/com.xayah.databackup)**
+நீங்கள் இதிலிருந்து **APK** ஐப் பெறலாம்:
+* **[வெளியீடுகள்](https://github.com/XayahSuSuSu/Android-DataBackup/releases)**
+* **[எப்-டராய்டு](https://f-droid.org/zh_Hans/packages/com.xayah.databackup.foss/)**
+* **[இசிஆன்டிராய்டு](https://apt.izzysoft.de/fdroid/index/apk/com.xayah.databackup)**
 
-There are 6 variants:
-* **foss**: Built with no [Firebase](https://firebase.google.com/).
-* **premium**: Built with [Firebase](https://firebase.google.com/).
-* **[arm64-v8a](https://developer.android.com/ndk/guides/abis#arm64-v8a)**: This ABI is for 64-bit ARM CPUs, **which is the first choice for most users**.
-* **[armeabi-v7a](https://developer.android.com/ndk/guides/abis#v7a)**: This ABI is for 32-bit ARM CPUs. It includes Thumb-2 and Neon.
-* **[x86](https://developer.android.com/ndk/guides/abis#x86)**: This ABI is for CPUs supporting the instruction set commonly known as "x86", "i386", or "IA-32".
-* **[x86_64](https://developer.android.com/ndk/guides/abis#86-64)**: This ABI is for CPUs supporting the instruction set commonly referred to as "x86-64". **It's for those users using PC emulator**
+6 வகைகள் உள்ளன:
+* **foss**: [Firebase] இல்லாமல் கட்டப்பட்டது(https://firebase.google.com/).
+* **பிரீமியம்**: [Firebase](https://firebase.google.com/) உடன் கட்டப்பட்டது.
+* **[arm64-v8a](https://developer.android.com/ndk/guides/abis#arm64-v8a)**: இந்த
+  ABI 64-பிட் கை CPUகளுக்கானது, **இது பெரும்பாலான பயனர்களின் முதல் தேர்வாகும்**.
+* **[armeabi-v7a](https://developer.android.com/ndk/guides/abis#v7a)**: இந்த ABI
+  32-பிட் கை CPUகளுக்கானது. இதில் தம்ப்-2 மற்றும் நியான் ஆகியவை அடங்கும்.
+* **[x86](https://developer.android.com/ndk/guides/abis#x86)**: இந்த ABI ஆனது
+  பொதுவாக "x86", "i386" அல்லது "IA-32" எனப்படும் அறிவுறுத்தல் தொகுப்பை
+  ஆதரிக்கும் CPUகளுக்கானது.
+* **[x86_64](https://developer.android.com/ndk/guides/abis#86-64)**: இந்த ABI
+  பொதுவாக "x86-64" என குறிப்பிடப்படும் அறிவுறுத்தல் தொகுப்பை ஆதரிக்கும்
+  CPUகளுக்கானது. **இது பிசி எமுலேட்டரைப் பயன்படுத்தும் பயனர்களுக்கானது**
