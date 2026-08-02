@@ -1,19 +1,23 @@
-# Setup
+# அமைவு
 <div align="center">
     <img src="/images/usage/setup_01.jpg" alt="setup_01" width="50%">
 </div>
 
-## Root permission
-You need to grant root first.
+## ரூட் இசைவு
+நீங்கள் முதலில் ரூட் வழங்க வேண்டும்.
 
-### * Magisk
-You can grant root access directly in the popup window when clicking the permission card.
+### * மந்திரம்
+இசைவு அட்டையைக் சொடுக்கு செய்யும் போது, பாப்அப் சாளரத்தில் நேரடியாக ரூட் அணுகலை
+வழங்கலாம்.
 
-### * KernelSU/APatch
-You need to grant root access manually in their manager first, then restart **DataBackup**.
+### * கர்னல்சு/ஒருஒட்டு
+நீங்கள் முதலில் அவர்களின் மேலாளரில் ரூட் அணுகலை கைமுறையாக வழங்க வேண்டும்,
+பின்னர் **DataBackup** ஐ மீண்டும் தொடங்கவும்.
 
-### Custom su file
-For some devices, `su` file may not be named `su`, so you can edit it manually. Just remember to restart **DataBackup** to make it work.
+### தனிப்பயன் சு கோப்பு
+சில சாதனங்களுக்கு, `su` கோப்பு `su` என பெயரிடப்படாமல் இருக்கலாம், எனவே நீங்கள்
+அதை கைமுறையாகத் திருத்தலாம். அதைச் செயல்படுத்த, **டேட்டா பேக்கப்பை** மீண்டும்
+தொடங்க நினைவில் கொள்ளுங்கள்.
 
 <div align="center">
     <img src="/images/usage/setup_02.jpg" alt="setup_02" width="50%">
