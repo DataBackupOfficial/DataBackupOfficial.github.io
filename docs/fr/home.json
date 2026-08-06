@@ -1,23 +1,23 @@
 {
-  "hero": {
-    "name": "DataBackup",
-    "tagline": "Free and open-source data backup application",
-    "imageAlt": "DataBackup",
-    "getStarted": "Get Started",
-    "viewOnGitHub": "View on GitHub"
-  },
-  "features": {
-    "root": {
-      "title": "Root",
-      "details": "Support Magisk, KernelSU, APatch."
+    "hero": {
+        "name": "DataBackup",
+        "tagline": "Application de sauvegarde de données libre et open source",
+        "imageAlt": "DataBackup",
+        "getStarted": "Commencer",
+        "viewOnGitHub": "View on GitHub"
     },
-    "multiUser": {
-      "title": "Multi-user Support",
-      "details": "You can backup/restore any applactions from/to any users."
-    },
-    "cloud": {
-      "title": "Cloud",
-      "details": "Support WebDAV, FTP, SMB."
+    "features": {
+        "root": {
+            "title": "Root",
+            "details": "Soutenez Magisk, KernelSU, APatch."
+        },
+        "multiUser": {
+            "title": "Support du Multi-utilisateur",
+            "details": "Vous pouvez sauvegarder/restaurer toutes les applications de / vers tous les utilisateurs."
+        },
+        "cloud": {
+            "title": "Cloud",
+            "details": "Soutenir WebDAV, FTP, SMB."
+        }
     }
-  }
 }
