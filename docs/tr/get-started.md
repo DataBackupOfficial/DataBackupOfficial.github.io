@@ -19,13 +19,12 @@ APK'yı buradan alabilirsiniz:
 6 farklı sürüm bulunmaktadır:
 * foss: [Firebase] içermez.
 * premium: [Firebase] içerir.
-* **[arm64-v8a](https://developer.android.com/ndk/guides/abis#arm64-v8a)**: This
-  ABI is for 64-bit ARM CPUs, **which is the first choice for most users**.
-* **[armeabi-v7a](https://developer.android.com/ndk/guides/abis#v7a)**: This ABI
-  is for 32-bit ARM CPUs. It includes Thumb-2 and Neon.
-* **[x86](https://developer.android.com/ndk/guides/abis#x86)**: This ABI is for
-  CPUs supporting the instruction set commonly known as "x86", "i386", or
-  "IA-32".
-* **[x86_64](https://developer.android.com/ndk/guides/abis#86-64)**: This ABI is
-  for CPUs supporting the instruction set commonly referred to as "x86-64".
-  **It's for those users using PC emulator**
+* **[arm64-v8a](https://developer.android.com/ndk/guides/abis#arm64-v8a)**: Bu
+  ABI 64 bit ARM işlemciler içindir, **çoğu kullanıcının ilk tercihidir**.
+* **[armeabi-v7a](https://developer.android.com/ndk/guides/abis#v7a)**: Bu ABI
+  32-bit ARM işlemciler içindir. Thumb-2 ve Neon'u içinde bulundurur.
+* **[x86](https://developer.android.com/ndk/guides/abis#x86)**: Bu ABI "x86",
+  "i386", veya "IA-32" olarak bilinen işlemci setleri içindir.
+* **[x86_64](https://developer.android.com/ndk/guides/abis#86-64)**: Bu "x86-64"
+  olarak bilinen komut setini kullanan işlemciler içindir.**Bilgisayarda
+  emülatör kullanan kullanıcılar içindir**
