@@ -1,19 +1,23 @@
-# Setup
+# Kurulum
 <div align="center">
     <img src="/images/usage/setup_01.jpg" alt="setup_01" width="50%">
 </div>
 
-## Root permission
-You need to grant root first.
+## Yetkili kullanıcı (Root) izni
+Önce kök erişimi vermeniz gerekiyor.
 
 ### * Magisk
-You can grant root access directly in the popup window when clicking the permission card.
+İzin kartına tıkladığınızda, açılan pencereden doğrudan kök erişimi
+verebilirsiniz.
 
 ### * KernelSU/APatch
-You need to grant root access manually in their manager first, then restart **DataBackup**.
+Öncelikle yönetici içinde elle kök erişimi vermeniz, ardından **DataBackup**'ı
+yeniden başlatmanız gerekir.
 
-### Custom su file
-For some devices, `su` file may not be named `su`, so you can edit it manually. Just remember to restart **DataBackup** to make it work.
+### Özel su (root) dosyası
+Bazı aygıtlarda, `su` dosyasının adı `su` olmayabilir; bu durumda dosyayı elle
+düzenleyebilirsiniz. Değişikliğin geçerli olması için **DataBackup**
+uygulamasını yeniden başlatmayı unutmayın.
 
 <div align="center">
     <img src="/images/usage/setup_02.jpg" alt="setup_02" width="50%">
