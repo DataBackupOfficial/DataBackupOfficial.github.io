@@ -1,1 +1,23 @@
-{}
+{
+    "hero": {
+        "name": "DataBackup",
+        "tagline": "Özgür ve açık kaynaklı veri yedekleme uygulaması",
+        "imageAlt": "DataBackup",
+        "getStarted": "Başla",
+        "viewOnGitHub": "GitHub'da Görüntüle"
+    },
+    "features": {
+        "root": {
+            "title": "Kök erişimi",
+            "details": "Magisk, KernelSU ve APatch destekler."
+        },
+        "multiUser": {
+            "title": "Çoklu Kullanıcı Desteği",
+            "details": "Herhangi bir uygulamayı herhangi bir kullanıcıdan yedekleyebilir veya herhangi bir kullanıcıya geri yükleyebilirsiniz."
+        },
+        "cloud": {
+            "title": "Bulut",
+            "details": "WebDAV, FTP ve SMB destekler."
+        }
+    }
+}
