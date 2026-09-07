@@ -11,14 +11,14 @@ bulunmaktadır.
 
 ## İndir
 
-APK'yı buradan alabilirsiniz:
+**APK**'yı buradan alabilirsiniz:
 * **[Yayınlananlar](https://github.com/XayahSuSuSu/Android-DataBackup/releases)**
 * **[F-Droid](https://f-droid.org/zh_Hans/packages/com.xayah.databackup.foss/)**
 * **[IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/com.xayah.databackup)**
 
 6 farklı sürüm bulunmaktadır:
-* foss: [Firebase] içermez.
-* premium: [Firebase] içerir.
+* **foss:** [Firebase](https://firebase.google.com/) içermez.
+* **premium**: [Firebase](https://firebase.google.com/) içerir.
 * **[arm64-v8a](https://developer.android.com/ndk/guides/abis#arm64-v8a)**: Bu
   ABI 64 bit ARM işlemciler içindir, **çoğu kullanıcının ilk tercihidir**.
 * **[armeabi-v7a](https://developer.android.com/ndk/guides/abis#v7a)**: Bu ABI
