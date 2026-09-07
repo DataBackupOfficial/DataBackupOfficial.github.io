@@ -1,1 +1,21 @@
-{}
+{
+    "sidebarMenuLabel": "Menü",
+    "darkModeSwitchLabel": "Görünüm",
+    "outlineTitle": "Bu sayfada",
+    "returnToTopLabel": "En üste dön",
+    "translateMenuLabel": "Çevir",
+    "docFooter": {
+        "prev": "Önceki sayfa",
+        "next": "Sonraki sayfa"
+    },
+    "nav": {
+        "home": "Ev",
+        "guide": "Kılavuz"
+    },
+    "sidebar": {
+        "guide": "Kılavuz",
+        "getStarted": "Başla",
+        "usage": "Kullanım",
+        "setup": "Kurulum"
+    }
+}
