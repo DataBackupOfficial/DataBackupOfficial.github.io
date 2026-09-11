@@ -23,12 +23,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: Setup Python
-        if: github.event_name != 'push'
         uses: actions/setup-python@v6
         with:
           python-version: "3.x"
       - name: Download Weblate credits
-        if: github.event_name != 'push'
         env:
           WEBLATE_TOKEN: ${{ secrets.WEBLATE_TOKEN }}
         run: |
@@ -47,6 +45,8 @@ jobs:
         run: npm ci
       - name: Build with VitePress
         run: npm run docs:build
+      - name: Verify translator JSON in build output
+        run: python3 -m json.tool docs/.vitepress/dist/api/translators.json > /dev/null
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
