@@ -1,1 +1,21 @@
-{}
+{
+    "sidebarMenuLabel": "Menu",
+    "darkModeSwitchLabel": "Penampilan",
+    "outlineTitle": "Di halaman ini",
+    "returnToTopLabel": "Kembali ke atas",
+    "translateMenuLabel": "Terjemahkan",
+    "docFooter": {
+        "prev": "Halaman sebelumnya",
+        "next": "Halaman berikutnya"
+    },
+    "nav": {
+        "home": "Beranda",
+        "guide": "Panduan"
+    },
+    "sidebar": {
+        "guide": "Panduan",
+        "getStarted": "Mulailah",
+        "usage": "Penggunaan",
+        "setup": "Setup"
+    }
+}
